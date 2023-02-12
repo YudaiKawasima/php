@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+ <meta charset="utf-8">
+ <title>掲示板__dbtwig版</title>
+ <meta name="description" content="サイトキャプションを入力">
+ <meta name="keywords" content="サイトキーワードを,で区切って入力">
+ <link rel="stylesheet" href="sample.css">
+ 
+ <script src="sample.js"></script>
+ </head>
+<body>
+    <form method = "post" action="">
+        <table>
+            <tr>
+                <th>名前</th>
+                <td><input type = "text" name= "name" value= ""></td>
+            </tr>
+            <th>
+                <td><textarea name = "contents" rows ="4" cols= "20">
+
+                </textarea>
+                    
+                </td>
+                <tr><td colspan ="2" ><input type ="submit" name= "send" value="書き込む">
+                </tr>
+            </th>
+        </table>
+    </form>
+    {%if msg | length > 0%}<p>{{msg}}</p>{%endif %}
+    {%if err_msg | length > 0%}<p syele= "color:#f100;">{{err_msg}}</p>{%endif%}
+ </body>
+ <tr>
+ <tr>&nbsp;</tr>
+ <tr>名前</tr>
+ <tr>コメント</tr>
+ </tr>
+ <!-- phpで書くとこんなかんじ　foreach ($data as $key=>$value) -->
+ {% for key,value in data %}
+
+ <tr>
+    <td>{{value.id}}</td>
+    <td> {{value.name}}</td>
+    <td>{{value.contents|n2br}}</td>
+ </tr>

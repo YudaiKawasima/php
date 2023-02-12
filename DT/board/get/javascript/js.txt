@@ -1,0 +1,53 @@
+function button_click() {
+    alert('クリック');
+}
+
+function button_check() {
+    // 変数を定義　cf.php $name
+    var nameElement = documentGetElementById('name_id');
+    var name = nameElement.value;
+    console.log(name);
+    if (name === '') {
+        alert('名前が入力されていません');
+    } else {
+        var writeElement = documentGetElementById('write')
+        writeElement.innerHTML = name;
+        alert('入力された名前は' + name + 'です');
+
+    }
+};
+
+$function() {
+    $('#click_id').click(function() {
+        alert('クリック');
+    });
+
+
+    $(#check_id).click(function() {
+        //name_id という部品を取ってくる
+        var name = $('#name_id').val();
+
+        if (name === '') {
+            alert('名前が入力されていません');
+
+
+        } else {
+            $('#write').html(name);
+            alert('入力された名前は' + name + 'です');
+        }
+    });
+    $("#area").hover(function() {
+            $("#area").css("background-color", "#808080");
+
+
+        }),
+
+
+
+
+
+        function() {
+            $("#area").css("background-color", "#46f2d2");
+
+        };
+};
